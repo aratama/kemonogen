@@ -1,4 +1,46 @@
 window.onload = function(){
+
+    var seed = {
+        x: (2147483648 * Math.random()) | 0,
+        y: (2147483648 * Math.random()) | 0,
+        z: (2147483648 * Math.random()) | 0,
+        w: (2147483648 * Math.random()) | 0
+    };
+    function randomInt(xors) {
+        var t = xors.x ^ (xors.x << 11);
+        xors.x = xors.y;
+        xors.y = xors.z;
+        xors.z = xors.w;
+        return xors.w = (xors.w^(xors.w>>>19))^(t^(t>>>8));
+    }
+    function random(xors) {
+        return randomInt(xors) / 2147483648;
+    }
+    function shuffle(xs){
+        var v = Object.assign({}, seed);
+        var xs = xs.slice();
+        var ys = [];
+        while(0 < xs.length){
+            var i = Math.abs(randomInt(v)) % xs.length;
+            ys.push(xs[i]);
+            xs.splice(i, 1);
+        }
+        return ys;
+    }
+
+    var colorTuples = shuffle([
+        ["#16ae67", "#90c31f"], 
+        ["#ea5421", "#f39800"], 
+        ["#00ac8e", "#e4007f"], 
+        ["#227fc4", "#00a1e9"], 
+        ["#9fa0a0", "#c9caca"], 
+        ["#e60013", "#f39800"], 
+        ["#c3d600", "#a42e8c"]
+    ]);
+
+    var topColors = shuffle(["#04ad8f", "#a6ce48", "#f3a118", "#ea6435", "#17b297", "#e30983", "#2782c4", "#1aa6e7", "#b5b5b5", "#f29905", "#e50011", "#ccdc26", "#a5328d", "#0aaa60", "#91c423", "#f29300", "#ec5f69", "#22b69e", "#e63e9b", "#917220"]);
+
+
     var topInput = document.querySelector("#top");
     var middleInput = document.querySelector("#middle");
     var bottomInput = document.querySelector("#bottom"); 
@@ -20,8 +62,7 @@ window.onload = function(){
     bottomInput.addEventListener("keydown", update);        
 
     function setText(topText, middleText, bottomText){
-        var primaryColour = ["#16ae67", "#ea5421", "#00ac8e", "#227fc4", "#9fa0a0", "#e60013", "#c3d600"];
-        var secondaryColour = ["#90c31f", "#f39800", "#e4007f", "#00a1e9", "#c9caca", "#f39800", "#a42e8c"];
+
 
         var canvas = document.getElementById("canvas");
         var g = canvas.getContext("2d");
@@ -61,24 +102,9 @@ window.onload = function(){
 
         // stroke top text 
         function iterate(callback){
-            var xors = {
-                x: 123456789,
-                y: 362436069,
-                z: 521288629,
-                w: 88675123
-            };
-            function randomInt(xors) {
-                var t = xors.x ^ (xors.x << 11);
-                xors.x = xors.y;
-                xors.y = xors.z;
-                xors.z = xors.w;
-                return xors.w = (xors.w^(xors.w>>>19))^(t^(t>>>8));
-            }
-            function random(xors) {
-                return randomInt(xors) / 2147483648;
-            }
+            var xors = Object.assign({}, seed);
             g.save();
-            var topColors = ["#04ad8f", "#a6ce48", "#f3a118", "#ea6435", "#17b297", "#e30983", "#2782c4", "#1aa6e7", "#b5b5b5", "#f29905", "#e50011", "#ccdc26", "#a5328d", "#0aaa60", "#91c423", "#f29300", "#ec5f69", "#22b69e", "#e63e9b", "#917220"];
+
             g.font = topTextFont;        
             g.fillStyle = "white";
             g.strokeStyle = "white";
@@ -102,22 +128,8 @@ window.onload = function(){
             g.restore();
         }
         g.save();
-        var xors = {
-            x: 123456789,
-            y: 362436069,
-            z: 521288629,
-            w: 88675123
-        };
-        function randomInt(xors) {
-            var t = xors.x ^ (xors.x << 11);
-            xors.x = xors.y;
-            xors.y = xors.z;
-            xors.z = xors.w;
-            return xors.w = (xors.w^(xors.w>>>19))^(t^(t>>>8));
-        }
-        function random(xors) {
-            return randomInt(xors) / 2147483648;
-        }
+        var xors = Object.assign({}, seed);
+        
 
 
         var topColors = ["#04ad8f", "#a6ce48", "#f3a118", "#ea6435", "#17b297", "#e30983", "#2782c4", "#1aa6e7", "#b5b5b5", "#f29905", "#e50011", "#ccdc26", "#a5328d", "#0aaa60", "#91c423", "#f29300", "#ec5f69", "#22b69e", "#e63e9b", "#917220"];
@@ -152,19 +164,14 @@ window.onload = function(){
         
         // fill charactors
         var x = 0;
-        var xors = {
-            x: 123456789,
-            y: 362436069,
-            z: 521288629,
-            w: 88675123
-        };
+        var xors = Object.assign({}, seed);
         for(var i = 0; i < middleText.length; i++){
             var c = middleText.slice(i, i + 1);
 
             // base color
             g.shadowColor = "rgba(0, 0, 0, 0.6)";
             g.shadowBlur = 10;
-            g.fillStyle = secondaryColour[i % secondaryColour.length];
+            g.fillStyle = colorTuples[i % colorTuples.length][0];
             g.fillText(c, 0, 0);
 
             g.save();
@@ -187,7 +194,7 @@ window.onload = function(){
             // upper color
             g.shadowColor = "none";
             g.shadowBlur = 0;
-            g.fillStyle = primaryColour[i % primaryColour.length];
+            g.fillStyle = colorTuples[i % colorTuples.length][1];
             g.fillText(c, 0, 0);
 
             g.restore();
