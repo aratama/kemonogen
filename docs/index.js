@@ -77,7 +77,7 @@ window.onload = function(){
         
 
         var topTextSize = 30;
-        var topMiddlePadding = 20;
+        var topMiddlePadding = 30;
         var middleTextSize = 120;
         var middleBottomPadding = 20;        
         var bottomTextSize = 30;
