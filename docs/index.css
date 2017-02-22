@@ -275,3 +275,5 @@ background-image: linear-gradient(45deg,  #bbb 25%, #bbb 25%, transparent 25%, t
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
+
+iframe#twitter-widget-0 { vertical-align: middle! important; }
