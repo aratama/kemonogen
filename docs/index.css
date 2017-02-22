@@ -234,13 +234,13 @@ footer {
 }
 
 
-canvas {
+img#result {
     transition-property: border;
     transition-duration: 0.3s;
     border: solid 8px transparent;
 }
 
-canvas:hover {
+img#result:hover {
     border: solid 8px white;
 }
 
@@ -292,14 +292,7 @@ iframe#twitter-widget-0 { vertical-align: middle! important; }
     transition-duration: 0.3s;
 }
 
-img#result {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-}
+
 
 .blur {
       -webkit-filter: blur(5px);

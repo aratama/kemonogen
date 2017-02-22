@@ -52,21 +52,11 @@ window.onload = function(){
     var foreground = document.getElementById("foreground");
     var image = document.getElementById("result");
     
-    foreground.style.display = "none";
-    foreground.addEventListener("click", function(){
-        foreground.style.display = "none";
-        container.classList.remove("blur");
-    });
-
-    var canvas = document.getElementById("canvas");
     var container = document.querySelector(".container");
+
+    var canvas = document.createElement("canvas");
     var g = canvas.getContext("2d");
 
-    canvas.addEventListener("click", function(){
-        image.src = canvas.toDataURL();
-        foreground.style.display = "block";
-        container.classList.add("blur");
-    });
 
 
     function update(){
@@ -253,6 +243,9 @@ window.onload = function(){
         }
 
         g.restore();
+
+
+        image.src = canvas.toDataURL();
     }
 
     topInput.value = "女の子の姿になった動物たちが繰り広げる大冒険！";
