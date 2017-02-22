@@ -145,9 +145,13 @@ window.onload = function(){
 
   
         iterate(function(i, c){
+            g.shadowColor = "transparent";
+
             g.strokeText(c, 0, 0);            
         });
         iterate(function(i, c){
+            g.shadowColor = "rgba(0, 0, 0, 0.3)";
+            g.shadowBlur = 10;
             g.fillStyle = topColors[i % topColors.length];
             g.fillText(c, 0, 0);
         });
@@ -220,8 +224,6 @@ window.onload = function(){
         g.strokeStyle = "white";
         g.fillStyle = "#977a2d";
         g.lineWidth = 13.0;
-        g.shadowColor = "rgba(0, 0, 0, 0.3)";
-        g.shadowBlur = 10;
         g.lineCap = "round";
         g.lineJoin = "round";
         g.textBaseline = "top";
@@ -235,6 +237,8 @@ window.onload = function(){
 
         for(var i = 0; i < bottomText.length; i++){
             var c = bottomText.slice(i, i + 1);
+            g.shadowColor = "rgba(0, 0, 0, 0.3)";
+            g.shadowBlur = 10;
             g.strokeText(c, 0, 0);
             g.shadowColor = "transparent";
             g.fillText(c, 0, 0);
