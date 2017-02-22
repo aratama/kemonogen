@@ -49,6 +49,26 @@ window.onload = function(){
     var middle = document.querySelector(".middle");
     var bottom = document.querySelector(".bottom");
 
+    var foreground = document.getElementById("foreground");
+    var image = document.getElementById("result");
+    
+    foreground.style.display = "none";
+    foreground.addEventListener("click", function(){
+        foreground.style.display = "none";
+        container.classList.remove("blur");
+    });
+
+    var canvas = document.getElementById("canvas");
+    var container = document.querySelector(".container");
+    var g = canvas.getContext("2d");
+
+    canvas.addEventListener("click", function(){
+        image.src = canvas.toDataURL();
+        foreground.style.display = "block";
+        container.classList.add("blur");
+    });
+
+
     function update(){
         setTimeout(function(){
             setText(topInput.value, middleInput.value, bottomInput.value);
@@ -64,8 +84,7 @@ window.onload = function(){
     function setText(topText, middleText, bottomText){
 
 
-        var canvas = document.getElementById("canvas");
-        var g = canvas.getContext("2d");
+        
 
         var topTextSize = 30;
         var topMiddlePadding = 20;
@@ -240,5 +259,7 @@ window.onload = function(){
     middleInput.value = "けものフレンズ";
     bottomInput.value = "KEMONO FRIENDS";
     update();
+
+    
 };
 

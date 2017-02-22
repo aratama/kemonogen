@@ -277,3 +277,34 @@ background-image: linear-gradient(45deg,  #bbb 25%, #bbb 25%, transparent 25%, t
 }
 
 iframe#twitter-widget-0 { vertical-align: middle! important; }
+
+
+
+
+#foreground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    left: 0px;
+    top: 0px;
+    transition-property: all;
+    transition-duration: 0.3s;
+}
+
+img#result {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.blur {
+      -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
