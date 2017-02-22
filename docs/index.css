@@ -1,0 +1,277 @@
+@font-face {
+    font-family: "KillGothic";
+    src: url("GN-KillGothic-U-KanaNA.ttf");
+}
+
+@font-face {
+    font-family: "DejimaMincho";
+    src: url("dejima-mincho-r227.ttf");
+}
+
+@font-face {
+    font-family: "PlayBold";
+    src: url("Play-Bold.ttf");
+}
+
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0;
+    position: absolute;
+}
+    
+.container {
+    margin: 50px;
+    min-height: calc(100% - 200px);
+}
+
+.savanna {
+    background-image: url("4004317022_92b981115b_b.jpg");
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    padding: 50px;
+    overflow: hidden;
+    border-radius: 30px;
+}
+.savanna::before {
+  content: '';
+  background: inherit;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+}
+
+h1 {
+    font-size: 35px;
+    color: #ffe663;
+    text-shadow: 0 0 10px black;
+    font-family: KillGothic;
+    margin: 20px;
+    word-wrap: normal;
+    word-break: keep-all;
+    text-align: center;
+}
+
+footer {
+    font-size: 16px;
+    color: white;
+    text-shadow: 0 0 10px black;
+    font-family: PlayBold;    
+    text-align: center;
+    margin-top: 20px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 50px; */
+}
+
+.inputs span {
+    color: #ffad65;
+    text-shadow: 0 0 8px black, 0 0 8px black, 0 0 8px black;
+    font-weight: bold;
+}
+
+.inputs input {
+    max-width: 40em;
+    width: 100%;
+    padding: 0.4em;
+    margin: 0.1em;
+    text-align: center;
+    border: none;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.inputs button {
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: 20px;
+    padding-top: 14px;
+    padding-bottom: 10px;    
+    padding-left: 80px;
+    padding-right: 80px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: solid 1px white;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+    transition-property: all;
+    transition-duration: 0.3s;
+}
+
+.inputs button:hover {
+    background-color: rgba(100, 100, 100, 0.7);
+}
+
+.inputs button:active {
+    transform: scale(0.90);
+}
+
+.inputs p {
+    color: white;
+    text-shadow: 0 0 0.5em rgba(0, 0, 0, 1.0), 0 0 0.5em rgba(0, 0, 0, 1.0), 0 0 0.5em rgba(0, 0, 0, 1.0);
+    margin: 4px;
+    font-weight: bold;
+}
+
+.preview {
+    /* margin: 60px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.top {
+    margin: 0.5em;
+    font-size: 30px;
+    font-family: "Yu Mincho", DejimaMincho;
+    font-weight: bold;
+    text-align: center;
+
+    position: relative;
+    line-height: 1.0em;
+
+    height: 1em;
+    padding: 0.1em;
+    display: flex;
+    flex-direction: row;
+}
+
+.top .char {
+    width: 1em;
+    height: 1em;
+    margin: 0.1em;
+}
+
+.top .char .upper {
+    position: absolute;
+    color: black;
+}
+
+.top .char .lower {
+    position: absolute;
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 0.35em;
+    color: white;
+}
+
+
+
+.bottom {
+    margin: 0.5em;
+    font-family: PlayBold;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 1.0em;
+    line-height: 1.0em;
+    display: relative;
+}
+
+.bottom .upper {
+    position: relative;
+    top: -1.0em;
+    color: #977a2d;
+}
+
+.bottom .lower {
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 0.35em;
+}
+
+.middle {
+    font-size: 120px;    
+    margin: 10px;
+    position: relative;
+    font-family: KillGothic;
+    letter-spacing: 0.1em;
+    display: flex;
+    flex-direction: row;
+}
+
+.middle .char {
+    width: 1em;
+    height: 1em;
+    position: relative;
+}
+
+.middle .char .primary {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: limegreen;
+    clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%); 
+}
+
+.middle .char .secondary {
+    position: absolute;
+    color: green;
+    text-shadow: 0 0 0.06em rgba(0, 0, 0, 0.8);
+}
+
+.middle .char .lower {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 0.13em;
+    color: white;
+    text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.6);
+}
+
+
+canvas {
+    transition-property: border;
+    transition-duration: 0.3s;
+    border: solid 8px transparent;
+}
+
+canvas:hover {
+    border: solid 8px white;
+}
+
+
+
+
+.checker {
+background-color: #aaa;
+-webkit-background-size: 30px 30px;
+-moz-background-size: 30px 30px;
+background-size: 30px 30px;
+background-position: 0 0, 15px 15px;
+background-image: -webkit-linear-gradient(45deg,  #bbb 25%, #bbb 25%, transparent 25%, transparent 75%, #bbb 75%, #bbb 75%),
+                  -webkit-linear-gradient(-135deg, #bbb 25%, #bbb 25%, transparent 25%, transparent 75%, #bbb 75%, #bbb 75%);
+background-image: -moz-linear-gradient(45deg,  #bbb 25%, #bbb 25%, transparent 25%, transparent 75%, #bbb 75%, #bbb 75%),
+                  -moz-linear-gradient(-135deg, #bbb 25%, #bbb 25%, transparent 25%, transparent 75%, #bbb 75%, #bbb 75%);
+background-image: -ms-linear-gradient(45deg,  #bbb 25%, #bbb 25%, transparent 25%, transparent 75%, #bbb 75%, #bbb 75%),
+                  -ms-linear-gradient(-135deg, #bbb 25%, #bbb 25%, transparent 25%, transparent 75%, #bbb 75%, #bbb 75%);
+background-image: -o-linear-gradient(45deg,  #bbb 25%, #bbb 25%, transparent 25%, transparent 75%, #bbb 75%, #bbb 75%),
+                  -o-linear-gradient(-135deg, #bbb 25%, #bbb 25%, transparent 25%, transparent 75%, #bbb 75%, #bbb 75%);
+background-image: linear-gradient(45deg,  #bbb 25%, #bbb 25%, transparent 25%, transparent 75%, #bbb 75%, #bbb 75%),
+                  linear-gradient(-135deg, #bbb 25%, #bbb 25%, transparent 25%, transparent 75%, #bbb 75%, #bbb 75%);
+}
+
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
