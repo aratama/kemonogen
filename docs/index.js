@@ -152,6 +152,12 @@ window.onload = function(){
         
         // fill charactors
         var x = 0;
+        var xors = {
+            x: 123456789,
+            y: 362436069,
+            z: 521288629,
+            w: 88675123
+        };
         for(var i = 0; i < middleText.length; i++){
             var c = middleText.slice(i, i + 1);
 
@@ -164,12 +170,18 @@ window.onload = function(){
             g.save();
 
             // clip
+            var rot = random(xors);
             g.beginPath();
-            g.moveTo(0, middleTextSize * 0.5);
-            g.lineTo(middleTextSize, middleTextSize * 0.5);
-            g.lineTo(middleTextSize, middleTextSize);
-            g.lineTo(0, middleTextSize);
+            g.save();
+            g.translate(middleTextSize * 0.5, middleTextSize * 0.5);            
+            g.rotate(rot);
+            g.translate(-middleTextSize * 0.5, -middleTextSize * 0.5);
+            g.moveTo(-middleTextSize * 2, middleTextSize * 0.5);
+            g.lineTo(middleTextSize * 2, middleTextSize * 0.5);
+            g.lineTo(middleTextSize * 2, middleTextSize * 2);
+            g.lineTo(-middleTextSize * 2, middleTextSize * 2);
             g.closePath();
+            g.restore();
             g.clip();
 
             // upper color
