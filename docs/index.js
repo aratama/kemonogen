@@ -53,6 +53,7 @@ window.onload = function(){
     var image = document.getElementById("result");
     
     var container = document.querySelector(".container");
+    var download = document.getElementById("download");
 
     var canvas = document.createElement("canvas");
     var g = canvas.getContext("2d");
@@ -249,7 +250,10 @@ window.onload = function(){
         g.restore();
 
 
-        image.src = canvas.toDataURL();
+        var url = canvas.toDataURL();
+        image.src = url;
+        download.href = url;
+
     }
 
     topInput.value = "女の子の姿になった動物たちが繰り広げる大冒険！";
@@ -257,6 +261,10 @@ window.onload = function(){
     bottomInput.value = "KEMONO FRIENDS";
     update();
 
-    
+    download.addEventListener("click", function(){
+        canvas.toBlob(function(blob) {
+            saveAs(blob, middleInput.value + ".png");
+        });
+    });
 };
 

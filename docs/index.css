@@ -86,29 +86,25 @@ footer {
     font-weight: bold;
 }
 
-.inputs input {
+.inputs input[type=text] {
     max-width: 40em;
     width: 100%;
     padding: 0.4em;
     margin: 0.1em;
     text-align: center;
+    font-size: 1.2em;
     border: none;
     color: white;
     background-color: rgba(0, 0, 0, 0.7);
 }
 
 .inputs button {
-    font-family: sans-serif;
-    font-weight: bold;
-    margin: 20px;
-    padding-top: 14px;
-    padding-bottom: 10px;    
-    padding-left: 80px;
-    padding-right: 80px;
+    font-family: KillGothic;
+    padding: 8px;
+    margin-right: 8px;
     color: white;
     background-color: rgba(0, 0, 0, 0.7);
     border: solid 1px white;
-    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
     transition-property: all;
     transition-duration: 0.3s;
 }
