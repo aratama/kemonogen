@@ -1,6 +1,7 @@
 @font-face {
     font-family: "KillGothic";
-    src: url("GN-KillGothic-U-KanaNA.ttf");
+    /* src: url("GN-KillGothic-U-KanaNA.ttf"); */
+    src: url("GN-KMBFont-UB-NewstyleKanaA_fixed.woff");
 }
 
 @font-face {
