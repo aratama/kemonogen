@@ -107,6 +107,7 @@ footer {
     border: solid 1px white;
     transition-property: all;
     transition-duration: 0.3s;
+    vertical-align: middle;
 }
 
 .inputs button:hover {
@@ -273,7 +274,10 @@ background-image: linear-gradient(45deg,  #bbb 25%, #bbb 25%, transparent 25%, t
                                   supported by Chrome and Opera */
 }
 
-iframe#twitter-widget-0 { vertical-align: middle! important; }
+iframe#twitter-widget-0 { 
+    vertical-align: middle! important; 
+    margin-left: 8px;
+}
 
 
 
