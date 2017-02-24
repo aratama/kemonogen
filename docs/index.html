@@ -60,8 +60,10 @@
                     </div>
 
                     <!-- line -->
-<div class="line-it-button" style="display: none;" data-type="share-a" data-lang="ja" ></div>
-<script src="//scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async="async" defer="defer" ></script>
+                    <div>
+                        <div class="line-it-button" style="display: none;" data-type="share-a" data-lang="ja" ></div>
+                        <script src="//scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async="async" defer="defer" ></script>
+                    </div>
 
                     <!--facebook -->
                     <div>
@@ -78,9 +80,10 @@
 
                     <!-- google+ -->
                     <div>
-                        <script src="//scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async="async" defer="defer" ></script>
-                        <script src="https://apis.google.com/js/platform.js" async defer></script>
-                        <g:plusone></g:plusone>
+                        <script src="https://apis.google.com/js/platform.js" async defer>
+                        {lang: 'ja'}
+                        </script>
+                        <div class="g-plusone" data-size="medium"></div>
                     </div>
 
                 </div>

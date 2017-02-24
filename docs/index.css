@@ -308,3 +308,7 @@ iframe#twitter-widget-0 { vertical-align: middle! important; }
     margin-left: 8px;
     margin-right: 8px;
 }
+
+.fb-like.fb_iframe_widget > span {
+    vertical-align: baseline !important;
+}
