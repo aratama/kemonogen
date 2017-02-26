@@ -1,7 +1,8 @@
+
+
 @font-face {
-    font-family: "KillGothic";
-    /* src: url("GN-KillGothic-U-KanaNA.ttf"); */
-    src: url("GN-KMBFont-UB-NewstyleKanaA_fixed.woff");
+    font-family: "japarifont";
+    src: url("japarifont.woff");
 }
 
 @font-face {
@@ -57,7 +58,7 @@ h1 {
     font-size: 35px;
     color: #ffe663;
     text-shadow: 0 0 10px black;
-    font-family: KillGothic;
+    font-family: japarifont;
     margin: 20px;
     word-wrap: normal;
     word-break: keep-all;
@@ -99,7 +100,7 @@ footer {
 }
 
 .inputs button {
-    font-family: KillGothic;
+    font-family: japarifont;
     padding: 8px;
     margin-right: 8px;
     color: white;
@@ -195,7 +196,7 @@ footer {
     font-size: 120px;    
     margin: 10px;
     position: relative;
-    font-family: KillGothic;
+    font-family: japarifont;
     letter-spacing: 0.1em;
     display: flex;
     flex-direction: row;

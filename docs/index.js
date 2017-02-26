@@ -86,7 +86,7 @@ window.onload = function(){
         var bottomTextLetterSpacing = 20;
 
         var topTextFont = `normal bold ${topTextSize}px/2 "Yu Mincho"`;
-        var middleTextFont = `normal 400 ${middleTextSize}px/2 KillGothic`;
+        var middleTextFont = `normal 400 ${middleTextSize}px/2 japarifont`;
         var bottomTextFont = `normal 400 ${bottomTextSize}px/2 PlayBold`;
 
         // resize canvas
